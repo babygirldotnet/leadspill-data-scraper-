@@ -2,8 +2,11 @@
 # LeadSpill Web App: Streamlit Slay Edition 💅✨
 # ==========================================
 
-import streamlit as st
-import pandas as pd
+import streamlit as st  # pyright: ignore[reportMissingImports]
+try:
+    import pandas as pd  # pyright: ignore[reportMissingModuleSource]
+except ImportError:  # pragma: no cover
+    pd = None
 import requests
 from bs4 import BeautifulSoup
 import time
